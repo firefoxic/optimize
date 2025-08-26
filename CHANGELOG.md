@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [4.0.1] — 2025–08–26
+
 ### Fixed
 
 - The paths in the metadata are correct again.
@@ -143,7 +145,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Basic functionality.
 
-[Unreleased]: https://github.com/firefoxic/optimize/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/firefoxic/optimize/compare/v4.0.1...HEAD
+[4.0.1]: https://github.com/firefoxic/optimize/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/firefoxic/optimize/compare/v3.0.1...v4.0.0
 [3.0.1]: https://github.com/firefoxic/optimize/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/firefoxic/optimize/compare/v2.1.3...v3.0.0
