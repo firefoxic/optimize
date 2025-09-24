@@ -28,24 +28,17 @@
 	},
 	"dependencies": {
 		"ico-endec": "^0.1.6",
-		"meow": "^13.2.0",
-		"sharp": "^0.34.3",
+		"meow": "^14.0.0",
+		"sharp": "^0.34.4",
 		"svgo": "^4.0.0"
 	},
 	"scripts": {
-		"prepare": "git config core.hooksPath .githooks",
-		"lint": "eslint",
-		"pretest": "pnpm lint",
-		"test": "node --test",
-		"preversion": "pnpm test",
-		"version": "update-changelog",
-		"postversion": "pnpm publish --provenance --access public --no-git-checks",
-		"postpublish": "git push --follow-tags"
+		"help": "make help",
+		"eslint": "eslint"
 	},
 	"devDependencies": {
 		"@firefoxic/eslint-config": "^5.0.0",
-		"@firefoxic/update-changelog": "^1.0.0",
-		"eslint": "9.35.0"
+		"eslint": "^9.36.0"
 	},
 	"keywords": [
 		"optimize",
