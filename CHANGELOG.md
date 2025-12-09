@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [5.0.1] — 2025–12–09
+
 ### Fixed
 
 - The Sharp library has been updated to the latest [version 0.34.5](https://sharp.pixelplumbing.com/changelog/v0.34.5/).
@@ -182,7 +184,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Basic functionality.
 
-[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.0.0...HEAD
+[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.0.1...HEAD
+[5.0.1]: https://github.com/firefoxic/optimize/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/firefoxic/optimize/compare/v4.0.1...v5.0.0
 [4.0.1]: https://github.com/firefoxic/optimize/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/firefoxic/optimize/compare/v3.0.1...v4.0.0

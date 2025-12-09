@@ -1,7 +1,7 @@
 {
 	"name": "@firefoxic/optimize",
 	"description": "Optimize all frontend graphic assets or all images in specific directory.",
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"license": "MIT",
 	"author": {
 		"name": "Sergey Artemov",
