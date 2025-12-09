@@ -29,7 +29,7 @@
 	"dependencies": {
 		"ico-endec": "^0.1.6",
 		"meow": "^14.0.0",
-		"sharp": "^0.34.4",
+		"sharp": "^0.34.5",
 		"svgo": "^4.0.0"
 	},
 	"scripts": {

@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Fixed
+
+- The Sharp library has been updated to the latest [version 0.34.5](https://sharp.pixelplumbing.com/changelog/v0.34.5/).
+
 ## [5.0.0] — 2025–09–15
 
 ### Changed
