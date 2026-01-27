@@ -37,8 +37,8 @@
 		"eslint": "eslint"
 	},
 	"devDependencies": {
-		"@firefoxic/eslint-config": "^5.0.0",
-		"eslint": "^9.39.1"
+		"@firefoxic/eslint-config": "^6.0.1",
+		"eslint": "^9.39.2"
 	},
 	"keywords": [
 		"optimize",
