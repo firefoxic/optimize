@@ -10,6 +10,10 @@ lint: ## 🧬 Check code by eslint
 	@node --run eslint
 .PHONY: lint
 
+fix: ## 🩹 Fix code by eslint
+	@node --run eslint -- --fix
+.PHONY: fix
+
 test: ## 🧪 Run tests
 	@node --test
 .PHONY: test
