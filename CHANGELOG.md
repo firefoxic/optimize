@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Fixed
+
+- Favicon processing is no longer broken.
+
 ## [5.0.1] — 2025–12–09
 
 ### Fixed
