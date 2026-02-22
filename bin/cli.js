@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// oxlint-disable max-lines-per-function
+import { error } from "node:console"
 import { relative } from "node:path"
 
 import meow from "meow"
@@ -49,13 +51,14 @@ switch (command) {
 	case `images`:
 		await createImagesCli()
 		break
+	// oxlint-disable-next-line no-undefined
 	case undefined:
 		if (cli.flags.help || cli.flags.h) cli.showHelp(0)
-		console.error(`Command not specified.`)
+		error(`Command not specified.`)
 		cli.showHelp(2)
 		break
 	default:
-		console.error(`Unknown command: ${command}`)
+		error(`Unknown command: ${command}`)
 		cli.showHelp(2)
 		break
 }
