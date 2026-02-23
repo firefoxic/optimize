@@ -12,8 +12,8 @@ importers:
         specifier: ^0.1.6
         version: 0.1.6
       meow:
-        specifier: ^14.0.0
-        version: 14.0.0
+        specifier: ^14.1.0
+        version: 14.1.0
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -637,8 +637,8 @@ packages:
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
 
-  meow@14.0.0:
-    resolution: {integrity: sha512-JhC3R1f6dbspVtmF3vKjAWz1EVIvwFrGGPLSdU6rK79xBwHWTuHoLnRX/t1/zHS1Ch1Y2UtIrih7DAHuH9JFJA==}
+  meow@14.1.0:
+    resolution: {integrity: sha512-EDYo6VlmtnumlcBCbh1gLJ//9jvM/ndXHfVXIFrZVr6fGcwTUyCTFNTLCKuY3ffbK8L/+3Mzqnd58RojiZqHVw==}
     engines: {node: '>=20'}
 
   minimatch@3.1.2:
@@ -1261,7 +1261,7 @@ snapshots:
 
   mdn-data@2.12.2: {}
 
-  meow@14.0.0: {}
+  meow@14.1.0: {}
 
   minimatch@3.1.2:
     dependencies:
