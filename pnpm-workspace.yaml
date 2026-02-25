@@ -6,8 +6,8 @@ mergeGitBranchLockfilesBranchPattern:
   - main
   - release*
 
-onlyBuiltDependencies:
-  - sharp
+allowBuilds:
+  sharp: true
 
 shellEmulator: true
 
