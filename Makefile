@@ -17,8 +17,20 @@ fix: ## 🩹 Fix code by oxlint
 .PHONY: fix
 
 test: ## 🧪 Run tests
-	@node --test
+	@vitest run
 .PHONY: test
+
+test-watch: ## 👁️ Run tests in watch mode
+	@vitest watch
+.PHONY: test-watch
+
+test-coverage: ## 📊 Run tests with coverage report
+	@vitest run --coverage
+.PHONY: test-coverage
+
+test-ui: ## 🧪 Run tests with UI
+	@vitest --ui
+.PHONY: test-ui
 
 release: lint test ## 🚀 Release a new version
 	@pnpm dlx @firefoxic/release-it

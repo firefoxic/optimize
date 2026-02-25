@@ -7,5 +7,5 @@ trap "git stash pop" EXIT
 staged=$(git --no-pager diff --staged --name-only | grep -E '\.js$')
 
 if [ -n "$staged" ]; then
-	./node_modules/.bin/oxlint -- `echo $staged` && node --test
+	./node_modules/.bin/oxlint -- `echo $staged` && make test
 fi

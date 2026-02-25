@@ -1,4 +1,3 @@
-import { error } from "node:console"
 import { mkdir, rm } from "node:fs/promises"
 import { basename, dirname, extname, join, resolve } from "node:path"
 
@@ -50,7 +49,8 @@ export async function processRaster (options) {
 			await convertToFormats({ filePath, baseName, destSubfolder, targetFormats, originDensity, actualDensity, width, progressBar })
 		}
 		catch (err) {
-			error(`${UP_ONE_LINE}${` `.repeat(60)}\rError processing "${filePath}":\n`, err.message, `\n\n`)
+			// eslint-disable-next-line no-console
+			console.error(`${UP_ONE_LINE}${` `.repeat(60)}\rError processing "${filePath}":\n`, err.message, `\n\n`)
 			return
 		}
 

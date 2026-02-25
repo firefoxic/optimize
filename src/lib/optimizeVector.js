@@ -1,4 +1,3 @@
-import { error } from "node:console"
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { basename, dirname, extname, join, resolve } from "node:path"
 
@@ -40,7 +39,8 @@ export async function optimizeVector ({ vectorPaths, inputDirectory, outputDirec
 			await writeFile(destPath, result.data)
 		}
 		catch (err) {
-			error(`Error processing ${filePath}:`, err)
+			// eslint-disable-next-line no-console
+			console.error(`Error processing ${filePath}:`, err)
 		}
 	}))
 }

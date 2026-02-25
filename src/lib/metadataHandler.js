@@ -1,4 +1,3 @@
-import { info } from "node:console"
 import { writeFile } from "node:fs/promises"
 
 /**
@@ -34,13 +33,15 @@ export class MetadataHandler {
 			metaData = existingMetadata
 
 			if (metaData.maxDensity !== this.options.originDensity) {
-				info(`\nProcessing of “${imageName}” image skipped:\nThe maxDensity value in the data.json file does not match the specified value.\n\n`)
+				// eslint-disable-next-line no-console
+				console.info(`\nProcessing of “${imageName}” image skipped:\nThe maxDensity value in the data.json file does not match the specified value.\n\n`)
 
 				return true
 			}
 
 			if (!isArraysEqualIgnoreCaseUnordered(metaData.formats, this.options.targetFormats)) {
-				info(`\nProcessing of “${imageName}” image skipped:\nThe formats in the data.json file do not match the specified formats.\n\n`)
+				// eslint-disable-next-line no-console
+				console.info(`\nProcessing of “${imageName}” image skipped:\nThe formats in the data.json file do not match the specified formats.\n\n`)
 
 				return true
 			}

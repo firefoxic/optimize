@@ -1,4 +1,3 @@
-import { error } from "node:console"
 import { posix, resolve } from "node:path"
 
 import sharp from "sharp"
@@ -24,7 +23,8 @@ export async function createRasterFavicons ({ publicDirectory, touchIcon, data }
 			await sharp(touchIcon).resize(size).toFormat(format, { lossless: true }).toFile(outputPath)
 		}
 		catch (err) {
-			error(`Error processing ${touchIcon}:`, err)
+			// eslint-disable-next-line no-console
+			console.error(`Error processing ${touchIcon}:`, err)
 			return null
 		}
 

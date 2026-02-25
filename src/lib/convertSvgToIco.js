@@ -1,4 +1,3 @@
-import { error } from "node:console"
 import { writeFile } from "node:fs/promises"
 import { resolve } from "node:path"
 
@@ -26,6 +25,7 @@ export async function convertSvgToIco ({ publicDirectory, ico32, ico16 }) {
 		await writeFile(destPath, destData)
 	}
 	catch (err) {
-		error(`Error processing favicon.ico:`, err)
+		// eslint-disable-next-line no-console
+		console.error(`Error processing favicon.ico:`, err)
 	}
 }

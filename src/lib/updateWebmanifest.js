@@ -1,4 +1,3 @@
-import { error } from "node:console"
 import { link, unlink, writeFile } from "node:fs/promises"
 import { resolve } from "node:path"
 
@@ -46,7 +45,8 @@ export async function updateWebmanifest (publicDirectory, icons, data) {
 	try {
 		await writeFile(webmanifestPath, `${JSON.stringify(webmanifest, null, `\t`)}\n`)
 	}
-	catch (err) {
-		error(`Error writing manifest.webmanifest file:`, err)
+	catch (error) {
+		// eslint-disable-next-line no-console
+		console.error(`Error writing manifest.webmanifest file:`, error)
 	}
 }
