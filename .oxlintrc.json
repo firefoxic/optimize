@@ -6,16 +6,5 @@
 	],
 	"env": {
 		"node": true,
-	},
-	"overrides": [
-		{
-			"files": [
-				"./test/**/*.{js,ts}"
-			],
-			"rules": {
-				"max-lines": "off",
-				"max-lines-per-function": "off",
-			}
-		}
-	]
+	}
 }

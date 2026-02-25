@@ -37,8 +37,8 @@
 		"help": "make help"
 	},
 	"devDependencies": {
-		"@firefoxic/oxlint-config": "^0.1.2",
-		"oxlint": "^1.49.0"
+		"@firefoxic/oxlint-config": "^0.1.3",
+		"oxlint": "^1.50.0"
 	},
 	"keywords": [
 		"optimize",
