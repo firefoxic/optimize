@@ -34,8 +34,7 @@
 		"svgo": "^4.0.0"
 	},
 	"scripts": {
-		"help": "make help",
-		"oxlint": "oxlint"
+		"help": "make help"
 	},
 	"devDependencies": {
 		"@firefoxic/oxlint-config": "^0.1.2",

@@ -1,3 +1,5 @@
+export PATH := ./node_modules/.bin:$(PATH)
+
 setup: ## 🛠️  Setup the project environment
 	$(call remove_wrong_installation)
 	$(call install_pnpm)
@@ -7,11 +9,11 @@ setup: ## 🛠️  Setup the project environment
 .PHONY: setup
 
 lint: ## 🧬 Lint code by oxlint
-	@node --run oxlint
+	@oxlint
 .PHONY: lint
 
 fix: ## 🩹 Fix code by oxlint
-	@node --run oxlint -- --fix
+	@oxlint --fix
 .PHONY: fix
 
 test: ## 🧪 Run tests
