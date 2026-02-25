@@ -1,11 +1,23 @@
 #!/bin/sh
 
-git stash -ku
+set -e
 
-trap "git stash pop" EXIT
+export PATH="./node_modules/.bin:$PATH"
 
-staged=$(git --no-pager diff --staged --name-only | grep -E '\.js$')
-
-if [ -n "$staged" ]; then
-	./node_modules/.bin/oxlint -- `echo $staged` && make test
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then against=HEAD
+else against=$(git hash-object -t tree /dev/null)
 fi
+
+git diff-index --check --cached "$against" --
+
+git stash -ku --quiet
+trap "git stash pop --quiet" EXIT
+
+changed_files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|ts)$') || true
+
+if [ -z "$changed_files" ]; then exit 0; fi
+
+oxlint $changed_files
+
+vitest run --changed
