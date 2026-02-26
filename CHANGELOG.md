@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [5.1.0] — 2026–02–26
+
 ### Added
 
 - For convenient work with the Node.js API package, it now provides type declarations.
@@ -194,7 +196,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Basic functionality.
 
-[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.0.2...HEAD
+[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.1.0...HEAD
+[5.1.0]: https://github.com/firefoxic/optimize/compare/v5.0.2...v5.1.0
 [5.0.2]: https://github.com/firefoxic/optimize/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/firefoxic/optimize/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/firefoxic/optimize/compare/v4.0.1...v5.0.0
