@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Added
+
+- For convenient work with the Node.js API package, it now provides type declarations.
+
 ## [5.0.2] — 2026–02–23
 
 ### Fixed

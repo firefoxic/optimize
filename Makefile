@@ -32,7 +32,11 @@ test-ui: ## 🧪 Run tests with UI
 	@vitest --ui
 .PHONY: test-ui
 
-release: lint test ## 🚀 Release a new version
+build: lint test ## 🏗️ Build the project
+	@tsup
+.PHONY: build
+
+release: build ## 🚀 Release a new version
 	@pnpm dlx @firefoxic/release-it
 .PHONY: release
 
