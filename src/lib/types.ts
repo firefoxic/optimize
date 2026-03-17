@@ -1,5 +1,6 @@
 import type { Config } from "svgo"
 
+/* oxlint-disable max-lines */
 /**
  * SVGO configuration type.
  * @see https://github.com/svg/svgo
@@ -163,6 +164,9 @@ export type GenerateIconsCssOptions = {
 
 	/** Whether to add metadata. */
 	addMetaData: boolean,
+
+	/** Whether to generate unregistered (regular) custom properties in `:root` instead of `@property` rules. */
+	unregistered: boolean,
 
 	/** Output directory path. */
 	outputDirectory: string,

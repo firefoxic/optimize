@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// oxlint-disable max-lines-per-function
 
 import { relative } from "node:path"
 
@@ -77,6 +78,11 @@ async function createAssetsCli (): Promise<void> {
 					"type": `boolean`,
 					"shortFlag": `m`,
 					"default": true,
+				},
+				unregistered: {
+					"type": `boolean`,
+					"shortFlag": `u`,
+					"default": false,
 				},
 			},
 		},

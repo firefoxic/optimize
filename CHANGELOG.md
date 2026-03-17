@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Added
+
+- A new flag, `--unregistered` (shorthand: `-u`), is now available for the `assets` command and is disabled by default. If specified, unregistered (regular) custom properties are generated for icons in `:root` instead of registered custom properties in `@property`. This is useful if `@property` is not fully supported by the target browser versions.
+
 ## [5.1.0] — 2026–02–26
 
 ### Added

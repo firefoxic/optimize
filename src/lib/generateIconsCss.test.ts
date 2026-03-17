@@ -25,6 +25,7 @@ describe(`generateIconsCss`, () => {
 			addMetaData: false,
 			outputDirectory: testDir,
 			vectorPaths: [join(testDir, `icon.svg`)],
+			unregistered: false,
 		}
 
 		await generateIconsCss(options)
@@ -38,6 +39,7 @@ describe(`generateIconsCss`, () => {
 			addMetaData: true,
 			outputDirectory: testDir,
 			vectorPaths: [],
+			unregistered: false,
 		}
 
 		await generateIconsCss(options)
@@ -51,6 +53,7 @@ describe(`generateIconsCss`, () => {
 			addMetaData: true,
 			outputDirectory: testDir,
 			vectorPaths: [join(testDir, `icon.svg`)],
+			unregistered: false,
 		}
 
 		await generateIconsCss(options)
@@ -64,6 +67,7 @@ describe(`generateIconsCss`, () => {
 			addMetaData: true,
 			outputDirectory: testDir,
 			vectorPaths: [join(testDir, `icon.svg`)],
+			unregistered: false,
 		}
 
 		await generateIconsCss(options)
@@ -79,6 +83,7 @@ describe(`generateIconsCss`, () => {
 			addMetaData: true,
 			outputDirectory: testDir,
 			vectorPaths: [join(nestedDir, `twitter.svg`)],
+			unregistered: false,
 		}
 
 		await generateIconsCss(options)
@@ -94,6 +99,7 @@ describe(`generateIconsCss`, () => {
 			addMetaData: true,
 			outputDirectory: testDir,
 			vectorPaths: [join(nestedDir, `facebook.svg`)],
+			unregistered: false,
 		}
 
 		await generateIconsCss(options)
@@ -111,6 +117,7 @@ describe(`generateIconsCss`, () => {
 				join(testDir, `icon2.svg`),
 				join(testDir, `icon3.svg`),
 			],
+			unregistered: false,
 		}
 
 		await generateIconsCss(options)
@@ -126,10 +133,63 @@ describe(`generateIconsCss`, () => {
 			addMetaData: true,
 			outputDirectory: `/root/forbidden`,
 			vectorPaths: [`/root/forbidden/icon.svg`],
+			unregistered: false,
 		}
 
 		await expect(generateIconsCss(options)).rejects.toThrow(
 			`Failed to generate icons CSS`,
 		)
+	})
+
+	it(`should generate :root with regular custom properties when unregistered is true`, async () => {
+		let options: GenerateIconsCssOptions = {
+			addMetaData: true,
+			unregistered: true,
+			outputDirectory: testDir,
+			vectorPaths: [join(testDir, `icon.svg`)],
+		}
+
+		await generateIconsCss(options)
+
+		let content = await readFile(join(testDir, `index.css`), `utf8`)
+		expect(content).toContain(`:root {`)
+		expect(content).toContain(`--icon-shape-icon: url("./icon.svg");`)
+		expect(content).not.toContain(`@property`)
+	})
+
+	it(`should handle multiple icons with unregistered`, async () => {
+		let options: GenerateIconsCssOptions = {
+			addMetaData: true,
+			unregistered: true,
+			outputDirectory: testDir,
+			vectorPaths: [
+				join(testDir, `icon1.svg`),
+				join(testDir, `icon2.svg`),
+			],
+		}
+
+		await generateIconsCss(options)
+
+		let content = await readFile(join(testDir, `index.css`), `utf8`)
+		expect(content).toContain(`:root {`)
+		expect(content).toContain(`--icon-shape-icon1: url("./icon1.svg");`)
+		expect(content).toContain(`--icon-shape-icon2: url("./icon2.svg");`)
+	})
+
+	it(`should handle nested directories with unregistered`, async () => {
+		let nestedDir = join(testDir, `social`)
+		await mkdir(nestedDir, { recursive: true })
+		let options: GenerateIconsCssOptions = {
+			addMetaData: true,
+			unregistered: true,
+			outputDirectory: testDir,
+			vectorPaths: [join(nestedDir, `twitter.svg`)],
+		}
+
+		await generateIconsCss(options)
+
+		let content = await readFile(join(testDir, `index.css`), `utf8`)
+		expect(content).toContain(`:root {`)
+		expect(content).toContain(`--icon-shape-social-twitter: url("./social/twitter.svg");`)
 	})
 })

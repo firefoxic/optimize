@@ -11,7 +11,7 @@ import type { GenerateIconsCssOptions } from "./types.js"
  * @returns {Promise<void>} A promise that resolves when CSS file is written.
  * @throws Error if CSS file generation fails.
  */
-export async function generateIconsCss ({ addMetaData, outputDirectory, vectorPaths }: GenerateIconsCssOptions): Promise<void> {
+export async function generateIconsCss ({ addMetaData, outputDirectory, vectorPaths, unregistered }: GenerateIconsCssOptions): Promise<void> {
 	if (!addMetaData || !vectorPaths) return
 
 	let cssFile = join(outputDirectory, `index.css`)
@@ -23,6 +23,8 @@ export async function generateIconsCss ({ addMetaData, outputDirectory, vectorPa
 
 		if (dirname(posixPath) !== `.`) iconName = `${dirname(posixPath).split(`/`).join(`-`)}-${iconName}`
 
+		if (unregistered) return `\t--icon-shape-${iconName}: url("./${posixPath}");`
+
 		return `
 @property --icon-shape-${iconName} {
 	syntax: "<url>";
@@ -31,6 +33,8 @@ export async function generateIconsCss ({ addMetaData, outputDirectory, vectorPa
 }
 `.trimStart()
 	}).join(`\n`)
+
+	if (unregistered) css = `:root {\n${css}\n}\n`
 
 	try {
 		await writeFile(cssFile, css)

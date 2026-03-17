@@ -67,6 +67,7 @@ Comprehensive optimization of all graphic assets for frontend projects. Conver
 `-f`, `--target-formats`                   | `[avif,webp]`     | Output raster image formats (to specify multiple formats, specify an option for each)
 `-r`, `--remove-origin`                    | `true`            | Remove the original raster files after successful processing
 `-m`, `--add-meta-data`                    | `true`            | Add metadata of the raster images to `data.json` file and generate CSS file for the icons
+`-u`, `--unregistered`                     | `false`           | Generate unregistered (regular) custom properties for the icons in `:root` instead of `@property` rules.
 
 > [!TIP]
 >

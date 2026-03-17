@@ -66,6 +66,9 @@ export const CLI_HELP = Object.freeze({
             Add metadata of the raster images to data.json file and
             generate CSS file for the icons.
 
+    -u, --unregistered          (default: false)
+            Generate unregistered (regular) custom properties for the icons in :root instead of @property rules.
+
     -h, --help
             Print this help and exit
 
