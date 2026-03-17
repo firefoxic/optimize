@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [5.2.0] — 2026–03–17
+
 ### Added
 
 - A new flag, `--unregistered` (shorthand: `-u`), is now available for the `assets` command and is disabled by default. If specified, unregistered (regular) custom properties are generated for icons in `:root` instead of registered custom properties in `@property`. This is useful if `@property` is not fully supported by the target browser versions.
@@ -200,7 +202,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Basic functionality.
 
-[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.1.0...HEAD
+[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.2.0...HEAD
+[5.2.0]: https://github.com/firefoxic/optimize/compare/v5.1.0...v5.2.0
 [5.1.0]: https://github.com/firefoxic/optimize/compare/v5.0.2...v5.1.0
 [5.0.2]: https://github.com/firefoxic/optimize/compare/v5.0.1...v5.0.2
 [5.0.1]: https://github.com/firefoxic/optimize/compare/v5.0.0...v5.0.1
