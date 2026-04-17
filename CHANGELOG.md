@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Fixed
+
+- When writing data to `data.json`, the file is now created if it does not exist. Previously, running the `assets` command resulted in an error, and the data was not saved.
+
 ## [5.2.0] — 2026–03–17
 
 ### Added

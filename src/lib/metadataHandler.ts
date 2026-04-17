@@ -1,4 +1,5 @@
-import { writeFile } from "node:fs/promises"
+import { mkdir, writeFile } from "node:fs/promises"
+import { dirname } from "node:path"
 
 import type { BaseOptions, ImageMetadata, ImageSize } from "./types.js"
 
@@ -137,7 +138,9 @@ export class MetadataHandler {
 	 * @returns {Promise<void>} A promise that resolves when data is written.
 	 */
 	async writeDataJson (): Promise<void> {
-		await writeFile(this.options.dataJsonPath ?? ``, `${JSON.stringify(this.options.data ?? {}, null, `\t`)}\n`)
+		let dataJsonPath = this.options.dataJsonPath ?? ``
+		await mkdir(dirname(dataJsonPath), { recursive: true })
+		await writeFile(dataJsonPath, `${JSON.stringify(this.options.data ?? {}, null, `\t`)}\n`)
 	}
 }
 
