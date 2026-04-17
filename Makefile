@@ -33,7 +33,7 @@ test-ui: ## 🧪 Run tests with UI
 .PHONY: test-ui
 
 build: lint test ## 🏗️ Build the project
-	@tsup && rm dist/bin/cli.d.ts
+	@tsdown && rm dist/bin/cli.d.mts
 .PHONY: build
 
 release: build ## 🚀 Release a new version

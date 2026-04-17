@@ -16,13 +16,13 @@
 		"url": "git://github.com/firefoxic/optimize.git"
 	},
 	"bin": {
-		"optimize": "dist/bin/cli.js"
+		"optimize": "dist/bin/cli.mjs"
 	},
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/lib/index.js",
-			"types": "./dist/lib/index.d.ts"
+			"import": "./dist/lib/index.mjs",
+			"types": "./dist/lib/index.d.mts"
 		}
 	},
 	"files": [
@@ -47,7 +47,7 @@
 		"@vitest/coverage-v8": "^4.1.0",
 		"@vitest/ui": "4.1.0",
 		"oxlint": "^1.56.0",
-		"tsup": "^8.5.1",
+		"tsdown": "^0.21.9",
 		"typescript": "^5.9.3",
 		"vitest": "^4.1.0"
 	},
