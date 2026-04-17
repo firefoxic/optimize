@@ -1,5 +1,6 @@
-import type { Config } from "svgo"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
+
+import type { Config } from "./types.js"
 
 vi.mock(`svgo`)
 

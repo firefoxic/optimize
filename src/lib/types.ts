@@ -1,11 +1,10 @@
-import type { Config } from "svgo"
-
 /* oxlint-disable max-lines */
+
 /**
  * SVGO configuration type.
  * @see https://github.com/svg/svgo
  */
-export type { Config }
+export type { Config } from "svgo"
 
 /**
  * Supported target formats for raster image conversion.
