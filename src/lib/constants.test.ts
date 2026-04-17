@@ -22,10 +22,6 @@ describe(`constants`, () => {
 	})
 
 	describe(`CLI_HELP`, () => {
-		it(`should be frozen object`, () => {
-			expect(Object.isFrozen(CLI_HELP)).toBe(true)
-		})
-
 		it(`should have main help text`, () => {
 			expect(CLI_HELP.main).toContain(`Usage`)
 			expect(CLI_HELP.main).toContain(`optimize`)

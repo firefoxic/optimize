@@ -8,7 +8,7 @@ export const RASTER_EXTNAMES = `{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP,avif,AVIF,g
 export const VECTOR_EXTNAMES = `{svg,SVG}`
 
 /** CLI help text for all commands. */
-export const CLI_HELP = Object.freeze({
+export const CLI_HELP: Record<`main` | `assets` | `images`, string> = {
 
 	/** Main help message. */
 	main: `
@@ -112,4 +112,4 @@ export const CLI_HELP = Object.freeze({
     $ optimize images -i photos -o optimized -f webp -f avif -r
 
 `,
-})
+}
