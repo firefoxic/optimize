@@ -38,12 +38,13 @@ export async function processRaster (options: ProcessRasterOptions): Promise<voi
 
 		let match = baseName.match(/^(.*?)(~(\d+))?$/)
 		let imageName = match ? match[1] : baseName
+		let fullImageName = subfolder === `.` ? imageName : join(subfolder, imageName)
 
-		if (metadataHandler?.prepare(imageName)) return
+		if (metadataHandler?.prepare(fullImageName)) return
 
 		try {
 			let { width, height } = await sharp(filePath).metadata()
-			if (metadataHandler) metadataHandler.addSizeInfo(imageName, width, height, match)
+			if (metadataHandler) metadataHandler.addSizeInfo(fullImageName, width, height, match)
 
 			await convertToFormats({ filePath, baseName, destSubfolder, targetFormats, originDensity, actualDensity, width, progressBar })
 		}
@@ -54,7 +55,7 @@ export async function processRaster (options: ProcessRasterOptions): Promise<voi
 		}
 
 		if (removeOrigin) await rm(filePath)
-		if (metadataHandler) metadataHandler.finalizeMetadata(imageName)
+		if (metadataHandler) metadataHandler.finalizeMetadata(fullImageName)
 	}))
 
 	if (metadataHandler) metadataHandler.writeDataJson()

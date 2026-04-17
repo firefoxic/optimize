@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ### Fixed
 
+- Image names in subdirectories are now processed correctly for `data.json` and include the subdirectory prefix.
 - When writing data to `data.json`, the file is now created if it does not exist. Previously, running the `assets` command resulted in an error, and the data was not saved.
 
 ## [5.2.0] — 2026–03–17

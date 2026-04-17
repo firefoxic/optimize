@@ -30,7 +30,12 @@ vi.mock(`../../src/lib/metadataHandler.js`, async (importOriginal) => {
 	return {
 		...actual,
 		MetadataHandler: {
-			init: vi.fn(() => null),
+			init: vi.fn(() => ({
+				prepare: vi.fn(() => false),
+				addSizeInfo: vi.fn(),
+				finalizeMetadata: vi.fn(),
+				writeDataJson: vi.fn(),
+			})),
 		},
 	}
 })
@@ -211,5 +216,37 @@ describe(`processRaster`, () => {
 		await processRaster(options)
 
 		expect(convertToFormats).toHaveBeenCalled()
+	})
+
+	it(`should include subdirectory in image name for metadata`, async () => {
+		let { MetadataHandler } = await import(`../../src/lib/metadataHandler.js`)
+		let mockHandler = {
+			prepare: vi.fn(() => false),
+			addSizeInfo: vi.fn(),
+			finalizeMetadata: vi.fn(),
+			writeDataJson: vi.fn(),
+		}
+		vi.mocked(MetadataHandler.init).mockReturnValue(mockHandler as unknown as ReturnType<typeof MetadataHandler.init>)
+
+		let subDir = join(testDir, `subdir`)
+		await mkdir(subDir, { recursive: true })
+		let imagePath = join(subDir, `imagename.png`)
+		await writeFile(imagePath, `png content`)
+
+		let options = {
+			rasterPaths: [imagePath],
+			inputDirectory: testDir,
+			outputDirectory: testDir,
+			targetFormats: [`avif`] as TargetFormat[],
+			originDensity: 1,
+			removeOrigin: false,
+			addMetaData: true,
+		}
+
+		await processRaster(options)
+
+		expect(mockHandler.prepare).toHaveBeenCalledWith(`subdir/imagename`)
+		expect(mockHandler.addSizeInfo).toHaveBeenCalledWith(`subdir/imagename`, 200, 100, expect.any(Array))
+		expect(mockHandler.finalizeMetadata).toHaveBeenCalledWith(`subdir/imagename`)
 	})
 })
