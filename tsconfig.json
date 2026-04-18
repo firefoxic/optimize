@@ -13,8 +13,6 @@
 		],
 		"outDir": "./dist",
 		"rootDir": "./src",
-		"strict": true,
-		"esModuleInterop": true,
 		"exactOptionalPropertyTypes": true,
 		"skipLibCheck": true,
 		"declaration": true,
