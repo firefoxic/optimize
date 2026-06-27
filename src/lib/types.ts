@@ -67,6 +67,9 @@ export type BaseOptions = {
 	/** Paths to raster files. */
 	rasterPaths?: string[],
 
+	/** Whether to generate unregistered (regular) custom properties in `:root` instead of `@property` rules. */
+	unregistered?: boolean,
+
 	/** Flag indicating that source favicon files don't exist. */
 	isSourceFaviconNotExists?: boolean,
 

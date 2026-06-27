@@ -1,6 +1,6 @@
 import { join, resolve } from "node:path"
 
-import sharp from "sharp"
+import sharp, { type AvailableFormatInfo } from "sharp"
 
 import { ConvertToFormatsOptions } from "./types.js"
 
@@ -22,7 +22,7 @@ export async function convertToFormats ({ filePath, baseName, destSubfolder, tar
 			}
 
 			let newWidth = width * density / actualDensity
-			await sharp(filePath).resize(Math.ceil(newWidth)).toFormat(format as unknown as sharp.AvailableFormatInfo).toFile(resolve(destPath))
+			await sharp(filePath).resize(Math.ceil(newWidth)).toFormat(format as unknown as AvailableFormatInfo).toFile(resolve(destPath))
 			return progressBar.update()
 		})),
 	)

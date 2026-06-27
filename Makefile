@@ -8,6 +8,10 @@ setup: ## 🛠️  Setup the project environment
 	$(call setup_githooks)
 .PHONY: setup
 
+check: ## ✅ Check types with TypeScript
+	@tsc --noEmit
+.PHONY: check
+
 lint: ## 🧬 Lint code by oxlint
 	@oxlint
 .PHONY: lint

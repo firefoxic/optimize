@@ -1,6 +1,6 @@
 import { posix, resolve } from "node:path"
 
-import sharp from "sharp"
+import sharp, { type AvailableFormatInfo } from "sharp"
 
 import type { CreateRasterFaviconsOptions, Icon } from "./types.js"
 import { updateWebmanifest } from "./updateWebmanifest.js"
@@ -20,7 +20,7 @@ export async function createRasterFavicons ({ publicDirectory, touchIcon, data }
 	let icons = await Promise.all(sizes.map(async (size): Promise<Icon | null> => {
 		try {
 			let outputPath = resolve(publicDirectory, `${fileNamePrefix}${size}.${format}`)
-			await sharp(touchIcon).resize(size).toFormat(format as unknown as sharp.AvailableFormatInfo, { lossless: true }).toFile(outputPath)
+			await sharp(touchIcon).resize(size).toFormat(format as unknown as AvailableFormatInfo, { lossless: true }).toFile(outputPath)
 		}
 		catch (err) {
 			// oxlint-disable-next-line no-console
