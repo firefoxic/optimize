@@ -6,5 +6,24 @@
 	],
 	"env": {
 		"node": true,
-	}
+	},
+	"rules": {
+		"unicorn/import-style": [
+			"error", {
+				"styles": {
+					"node:path": { "named": true }
+				}
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": [
+				"**/*.d.ts",
+			],
+			"rules": {
+				"import/unambiguous": "off",
+			},
+		},
+	],
 }

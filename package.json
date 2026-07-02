@@ -29,27 +29,38 @@
 		"./dist/"
 	],
 	"engines": {
-		"node": ">=22.18",
-		"pnpm": ">=10.30"
+		"node": ">=22.18"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": ">=26.4",
+			"onFail": "download"
+		},
+		"packageManager": {
+			"name": "pnpm",
+			"version": ">=11.9",
+			"onFail": "download"
+		}
 	},
 	"dependencies": {
 		"ico-endec": "^0.1.6",
 		"meow": "^14.1.0",
-		"sharp": "^0.34.5",
+		"sharp": "^0.35.3",
 		"svgo": "^4.0.1"
 	},
 	"scripts": {
 		"help": "make help"
 	},
 	"devDependencies": {
-		"@firefoxic/oxlint-config": "^0.3.1",
-		"@types/node": "^25.6.0",
-		"@vitest/coverage-v8": "^4.1.4",
-		"@vitest/ui": "4.1.4",
-		"oxlint": "^1.60.0",
-		"tsdown": "^0.21.9",
-		"typescript": "^6.0.3",
-		"vitest": "^4.1.4"
+		"@firefoxic/oxlint-config": "^0.4.0",
+		"@types/node": "^26.1.0",
+		"@vitest/coverage-v8": "^4.1.9",
+		"@vitest/ui": "4.1.9",
+		"oxlint": "^1.72.0",
+		"tsdown": "^0.22.3",
+		"typescript": "^7.0.1-rc",
+		"vitest": "^4.1.9"
 	},
 	"keywords": [
 		"optimize",

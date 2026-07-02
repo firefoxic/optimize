@@ -16,15 +16,15 @@ import type { BaseOptions, ConvertSvgToIcoOptions, CreateLinksFileOptions, Creat
  * Provides methods for optimizing favicons, icons, and images.
  */
 export class AssetOptimizer {
-	baseOptions: BaseOptions
+	public baseOptions: BaseOptions
 
-	dataLoaded: boolean
+	public dataLoaded: boolean
 
 	/**
 	 * Creates an asset optimizer.
 	 * @param {BaseOptions} baseOptions - Base configuration options.
 	 */
-	constructor (baseOptions: BaseOptions) {
+	public constructor (baseOptions: BaseOptions) {
 		this.baseOptions = baseOptions
 		this.dataLoaded = false
 	}
@@ -34,7 +34,7 @@ export class AssetOptimizer {
 	 * @async
 	 * @returns {Promise<void>} A promise that resolves when metadata is loaded.
 	 */
-	async loadMetadata (): Promise<void> {
+	public async loadMetadata (): Promise<void> {
 		if (this.dataLoaded || !this.baseOptions.sharedDirectory) return
 
 		this.baseOptions.dataJsonPath = resolve(
@@ -61,7 +61,7 @@ export class AssetOptimizer {
 	 * @param {Record<string, unknown>} overrides - Optional property overrides.
 	 * @returns {BaseOptions} Configured options object.
 	 */
-	createOptionsFor (type: `favicons` | `icons` | `images`, overrides: Record<string, unknown> = {}): BaseOptions {
+	public createOptionsFor (type: `favicons` | `icons` | `images`, overrides: Record<string, unknown> = {}): BaseOptions {
 		let options: BaseOptions = { ...this.baseOptions, ...overrides }
 
 		switch (type) {
@@ -89,7 +89,7 @@ export class AssetOptimizer {
 	 * @async
 	 * @returns {Promise<void>} A promise that resolves when optimization is complete.
 	 */
-	async optimizeImages (): Promise<void> {
+	public async optimizeImages (): Promise<void> {
 		let options = this.createOptionsFor(`images`, { addMetaData: false })
 
 		await addPathsToOptions(options)
@@ -102,7 +102,7 @@ export class AssetOptimizer {
 	 * @async
 	 * @returns {Promise<void>} A promise that resolves when optimization is complete.
 	 */
-	async optimizeImagesWithMetadata (): Promise<void> {
+	public async optimizeImagesWithMetadata (): Promise<void> {
 		await this.loadMetadata()
 
 		let options = this.createOptionsFor(`images`)
@@ -117,7 +117,7 @@ export class AssetOptimizer {
 	 * @async
 	 * @returns {Promise<void>} A promise that resolves when optimization is complete.
 	 */
-	async optimizeIcons (): Promise<void> {
+	public async optimizeIcons (): Promise<void> {
 		let options = this.createOptionsFor(`icons`)
 
 		await addPathsToOptions(options)
@@ -132,7 +132,7 @@ export class AssetOptimizer {
 	 * @async
 	 * @returns {Promise<void>} A promise that resolves when optimization is complete.
 	 */
-	async optimizeFavicons (): Promise<void> {
+	public async optimizeFavicons (): Promise<void> {
 		await this.loadMetadata()
 
 		let options = this.createOptionsFor(`favicons`)
@@ -152,7 +152,7 @@ export class AssetOptimizer {
 	 * @async
 	 * @returns {Promise<void>} A promise that resolves when all optimizations are complete.
 	 */
-	async optimizeAll (): Promise<void> {
+	public async optimizeAll (): Promise<void> {
 		await this.optimizeFavicons()
 		await this.optimizeIcons()
 		await this.optimizeImagesWithMetadata()

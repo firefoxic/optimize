@@ -36,7 +36,7 @@ export async function processRaster (options: ProcessRasterOptions): Promise<voi
 
 		await mkdir(destSubfolder, { recursive: true })
 
-		let match = baseName.match(/^(.*?)(~(\d+))?$/)
+		let match = baseName.match(/^(.*?)(~(\d+))?$/u)
 		let imageName = match ? match[1] : baseName
 		let fullImageName = subfolder === `.` ? imageName : join(subfolder, imageName)
 

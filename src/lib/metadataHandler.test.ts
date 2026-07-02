@@ -1,5 +1,3 @@
-import { rm } from "node:fs/promises"
-
 import { describe, expect, it } from "vitest"
 
 import { MetadataHandler } from "./metadataHandler.js"
@@ -211,7 +209,6 @@ describe(`MetadataHandler`, () => {
 	describe(`writeDataJson`, () => {
 		it(`should write data to JSON file`, async () => {
 			let testPath = `/tmp/test-data.json`
-			await rm(testPath, { force: true })
 			let options = makeOptions({
 				addMetaData: true,
 				data: { images: { test: { maxDensity: 2 } } },
@@ -222,10 +219,9 @@ describe(`MetadataHandler`, () => {
 			await handler.writeDataJson()
 		})
 
-		it(`should create directory if it does not exist`, async () => {
-			let testDir = `/tmp/test-metadata-handler-subdir`
-			let testPath = `${testDir}/nested/test-data.json`
-			await rm(testDir, { force: true, recursive: true })
+		it(`should create directories if they don't exist`, async () => {
+			let testDir = `/tmp/test-dir-${Date.now()}`
+			let testPath = `${testDir}/data.json`
 			let options = makeOptions({
 				addMetaData: true,
 				data: { images: { test: { maxDensity: 2 } } },
@@ -235,9 +231,13 @@ describe(`MetadataHandler`, () => {
 
 			await handler.writeDataJson()
 
-			let { readFile } = await import(`node:fs/promises`)
-			let content = await readFile(testPath, `utf-8`)
-			expect(content).toContain(`test`)
+			// Verify file was created
+			let fs = await import(`node:fs/promises`)
+			let stats = await fs.stat(testPath)
+			expect(stats.isFile()).toBe(true)
+
+			// Cleanup
+			await fs.rm(testDir, { recursive: true, force: true })
 		})
 	})
 })

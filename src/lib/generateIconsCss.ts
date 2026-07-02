@@ -9,7 +9,7 @@ import type { GenerateIconsCssOptions } from "./types.js"
  * @async
  * @param {GenerateIconsCssOptions} options - Options for CSS generation.
  * @returns {Promise<void>} A promise that resolves when CSS file is written.
- * @throws Error if CSS file generation fails.
+ * @throws {Error} Error if CSS file generation fails.
  */
 export async function generateIconsCss ({ addMetaData, outputDirectory, vectorPaths, unregistered }: GenerateIconsCssOptions): Promise<void> {
 	if (!addMetaData || !vectorPaths) return
