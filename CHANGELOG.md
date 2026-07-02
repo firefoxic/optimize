@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [5.2.2] — 2026–07–02
+
 ### Fixed
 
 - The dependencies have now been updated to versions that include security fixes.
@@ -213,7 +215,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Basic functionality.
 
-[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.2.1...HEAD
+[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.2.2...HEAD
+[5.2.2]: https://github.com/firefoxic/optimize/compare/v5.2.1...v5.2.2
 [5.2.1]: https://github.com/firefoxic/optimize/compare/v5.2.0...v5.2.1
 [5.2.0]: https://github.com/firefoxic/optimize/compare/v5.1.0...v5.2.0
 [5.1.0]: https://github.com/firefoxic/optimize/compare/v5.0.2...v5.1.0
