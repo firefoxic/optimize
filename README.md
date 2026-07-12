@@ -3,7 +3,6 @@
 
 [![License: MIT][license-image]][license-url]
 [![Changelog][changelog-image]][changelog-url]
-[![NPM version][npm-image]][npm-url]
 [![Test Status][test-image]][test-url]
 
 Optimize all frontend graphic assets or all images in specific directory.
@@ -137,9 +136,6 @@ Optimize vector and raster images in specific directory (current by default).
 
 [changelog-url]: https://github.com/firefoxic/optimizee/blob/main/CHANGELOG.md
 [changelog-image]: https://img.shields.io/badge/Changelog-md-limegreen
-
-[npm-url]: https://www.npmjs.com/package/@firefoxic/optimize
-[npm-image]: https://img.shields.io/npm/v/%40firefoxic%2Foptimize?logo=npm&color=limegreen
 
 [test-url]: https://github.com/firefoxic/optimize/actions
 [test-image]: https://github.com/firefoxic/optimize/actions/workflows/test.yaml/badge.svg?branch=main
