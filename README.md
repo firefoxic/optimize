@@ -34,7 +34,7 @@ pnpm add @firefoxic/optimize -g
 
 ## Usage
 
-Optimize is invoked via the command line:
+`optimize` is invoked via the command line:
 
 - with globally installation:
 
@@ -45,13 +45,13 @@ Optimize is invoked via the command line:
 - with locally installation (in a project):
 
 	```shell
-	pnpm exec optimize <command> [options]
+	pnpx optimize <command> [options]
 	```
 
 - without installation:
 
 	```shell
-	pnpm dlx @firefoxic/optimize <command> [options]
+	pnpx @firefoxic/optimize <command> [options]
 	```
 
 ### The `assets` command
