@@ -34,12 +34,12 @@
 	"devEngines": {
 		"runtime": {
 			"name": "node",
-			"version": ">=26.4",
+			"version": ">=26.5",
 			"onFail": "download"
 		},
 		"packageManager": {
 			"name": "pnpm",
-			"version": ">=11.9",
+			"version": ">=11.17",
 			"onFail": "download"
 		}
 	},
@@ -47,20 +47,20 @@
 		"ico-endec": "^0.1.6",
 		"meow": "^14.1.0",
 		"sharp": "^0.35.3",
-		"svgo": "^4.0.1"
+		"svgo": "^4.0.2"
 	},
 	"scripts": {
 		"help": "make help"
 	},
 	"devDependencies": {
 		"@firefoxic/oxlint-config": "^0.4.0",
-		"@types/node": "^26.1.0",
-		"@vitest/coverage-v8": "^4.1.9",
-		"@vitest/ui": "4.1.9",
-		"oxlint": "^1.72.0",
-		"tsdown": "^0.22.3",
-		"typescript": "^7.0.1-rc",
-		"vitest": "^4.1.9"
+		"@types/node": "^26.1.1",
+		"@vitest/coverage-v8": "^4.1.10",
+		"@vitest/ui": "4.1.10",
+		"oxlint": "^1.75.0",
+		"tsdown": "^0.22.14",
+		"typescript": "^7.0.2",
+		"vitest": "^4.1.10"
 	},
 	"keywords": [
 		"optimize",
