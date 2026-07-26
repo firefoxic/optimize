@@ -67,7 +67,7 @@ async function createAssetsCli (): Promise<void> {
 					"type": `string`,
 					"shortFlag": `f`,
 					"isMultiple": true,
-					"default": [`avif`, `webp`],
+					"default": [`avif`],
 				},
 				removeOrigin: {
 					"type": `boolean`,

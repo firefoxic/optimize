@@ -55,7 +55,7 @@ export const CLI_HELP: Record<`main` | `assets` | `images`, string> = {
             Pixel density in dppx of the raw raster images
             (0 means 1, but without adding the density suffix to the filename)
 
-    -f, --target-formats         (default: ["avif", "webp"])
+    -f, --target-formats         (default: "avif")
             Output raster image formats
             (to specify multiple formats, specify an option for each)
 

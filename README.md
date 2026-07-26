@@ -63,7 +63,7 @@ Comprehensive optimization of all graphic assets for frontend projects. Conver
 `-p`, `--public-directory`                 | `./public/`       | Path to the directory with static assets
 `-s`, `--shared-directory`                 | `./src/shared/`   | Path to the directory with shared files
 `-d`, `--origin-density`                   | `2`               | Pixel density in dppx of the raw raster images (`0` works like `1`, but without adding the density suffix to the filename)
-`-f`, `--target-formats`                   | `[avif,webp]`     | Output raster image formats (to specify multiple formats, specify an option for each)
+`-f`, `--target-formats`                   | `avif`            | Output raster image formats (to specify multiple formats, specify an option for each)
 `-r`, `--remove-origin`                    | `true`            | Remove the original raster files after successful processing
 `-m`, `--add-meta-data`                    | `true`            | Add metadata of the raster images to `data.json` file and generate CSS file for the icons
 `-u`, `--unregistered`                     | `false`           | Generate unregistered (regular) custom properties for the icons in `:root` instead of `@property` rules.
@@ -78,7 +78,7 @@ Comprehensive optimization of all graphic assets for frontend projects. Conver
 >
 > #### Exporting raster layers from mockups
 >
-> If you have finally managed to give up old formats (such as JPG and PNG) and use only modern Avif and Webp, it is better to export raster layers from Figma or Penpot only to PNG. JPG adds artifacts on them. Avoid unnecessary quality loss.
+> If you have finally managed to give up old formats (such as JPG and PNG) and use only modern Avif (and/or Webp), it is better to export raster layers from Figma or Penpot only to PNG. JPG adds artifacts on them. Avoid unnecessary quality loss.
 
 > [!TIP]
 >

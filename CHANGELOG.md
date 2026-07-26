@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Changed
+
+- The default value for the `--target-formats` (`-f`) option of the `assets` command is now `avif`, because the Avif format has achieved _Baseline Widely Available_ status. If you are not yet able to stop using WebP as a fallback for Avif, specify both formats: `optimize assets -f avif -f webp`.
+
 ## [5.2.2] — 2026–07–02
 
 ### Fixed
