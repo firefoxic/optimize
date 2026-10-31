@@ -46,7 +46,7 @@
 	"dependencies": {
 		"ico-endec": "^0.1.6",
 		"meow": "^14.1.0",
-		"sharp": "^0.35.3",
+		"sharp": "^0.35.5",
 		"svgo": "^4.1.0"
 	},
 	"scripts": {
