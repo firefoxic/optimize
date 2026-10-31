@@ -37,13 +37,17 @@ export async function processRaster (options: ProcessRasterOptions): Promise<voi
 		await mkdir(destSubfolder, { recursive: true })
 
 		let match = baseName.match(/^(.*?)(~(\d+))?$/u)
-		let imageName = match ? match[1] : baseName
+		let imageName = match?.[1] ?? baseName
 		let fullImageName = subfolder === `.` ? imageName : join(subfolder, imageName)
 
 		if (metadataHandler?.prepare(fullImageName)) return
 
 		try {
 			let { width, height } = await sharp(filePath).metadata()
+			if (width === undefined || height === undefined) {
+				throw new Error(`Unable to determine image dimensions for "${filePath}"`)
+			}
+
 			if (metadataHandler) metadataHandler.addSizeInfo(fullImageName, width, height, match)
 
 			await convertToFormats({ filePath, baseName, destSubfolder, targetFormats, originDensity, actualDensity, width, progressBar })

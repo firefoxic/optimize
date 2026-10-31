@@ -1,9 +1,10 @@
 {
 	"$schema": "https://www.schemastore.org/tsconfig",
 	"compilerOptions": {
-		"target": "esnext",
+		"target": "ESNext",
 		"module": "nodenext",
 		"moduleResolution": "nodenext",
+		"noEmit": true,
 		"lib": [
 			"ESNext",
 			"DOM",
@@ -11,17 +12,23 @@
 		"types": [
 			"node"
 		],
-		"outDir": "./dist",
-		"rootDir": "./src",
 		"exactOptionalPropertyTypes": true,
 		"skipLibCheck": true,
 		"declaration": true,
 		"noEmitOnError": true,
 		"resolveJsonModule": true,
-		"isolatedDeclarations": true,
+		// "isolatedDeclarations": true,
+		"esModuleInterop": true,
+		"noUncheckedIndexedAccess": true,
+		"strictNullChecks": true,
+		"noImplicitAny": true,
+		"forceConsistentCasingInFileNames": true,
+		"erasableSyntaxOnly": true,
+		"verbatimModuleSyntax": true,
+		"rewriteRelativeImportExtensions": true,
 	},
 	"include": [
-		"src/**/*",
+		"**/*",
 	],
 	"exclude": [
 		"node_modules",

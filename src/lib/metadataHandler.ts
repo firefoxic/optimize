@@ -107,7 +107,8 @@ export class MetadataHandler {
 			height: Math.ceil(height / this.options.originDensity),
 		}
 
-		if (breakpointMatch && breakpointMatch[2]) sizeInfo.breakpoint = +breakpointMatch[3]
+		let breakpoint = breakpointMatch?.[3]
+		if (breakpoint !== undefined) sizeInfo.breakpoint = Math.trunc(Number(breakpoint))
 
 		if (!metaData.sizes) metaData.sizes = []
 		metaData.sizes.push(sizeInfo)

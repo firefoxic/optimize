@@ -2,7 +2,7 @@ import { join, resolve } from "node:path"
 
 import sharp, { type AvailableFormatInfo } from "sharp"
 
-import { ConvertToFormatsOptions } from "./types.js"
+import type { ConvertToFormatsOptions } from "./types.js"
 
 /**
  * Converts an image to multiple target formats with different pixel densities.

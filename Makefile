@@ -9,7 +9,7 @@ help: ## 🧾 Print this message
 .PHONY: help
 
 check: ## ✅ Check types with TypeScript
-	tsc --noEmit
+	tsrs
 .PHONY: check
 
 lint: ## 🧬 Lint code by oxlint
@@ -36,8 +36,10 @@ test-ui: ## 🧪 Run tests with UI
 	vitest --ui
 .PHONY: test-ui
 
-build: lint test ## 🏗️ Build the project
-	tsdown && rm dist/bin/cli.d.ts
+build: check lint test ## 🏗️ Build the project
+	rm -rf dist
+	tsrs -p tsconfig.build.json
+	rm dist/bin/cli.d.ts
 .PHONY: build
 
 release: build ## 🚀 Release a new version
