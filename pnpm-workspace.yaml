@@ -1,14 +1,10 @@
 allowBuilds:
   sharp: true
 
-gitBranchLockfile: true
-
 gitChecks: false
 
-mergeGitBranchLockfilesBranchPattern:
-  - main
-  - release
-  - release-*
+minimumReleaseAgeExclude:
+  - '@firefoxic/*'
 
 registries:
   default: https://registry.npmjs.org/
