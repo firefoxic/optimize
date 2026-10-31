@@ -54,11 +54,11 @@
 		"prepare": "git config --local core.hooksPath .githooks || true"
 	},
 	"devDependencies": {
-		"@firefoxic/oxlint-config": "^0.4.0",
+		"@firefoxic/oxlint-config": "~0.5",
 		"@types/node": "^26.1.1",
 		"@vitest/coverage-v8": "^4.1.10",
 		"@vitest/ui": "4.1.10",
-		"oxlint": "^1.75.0",
+		"oxlint": "^1",
 		"tsdown": "^0.22.14",
 		"typescript": "^7.0.2",
 		"vitest": "^4.1.10"

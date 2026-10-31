@@ -9,18 +9,6 @@ import type { BaseOptions } from "./types.js"
 let testDir: string = join(process.cwd(), `test-temp-addPathsToOptions`)
 
 describe(`addPathsToOptions`, () => {
-	// helper that returns a fully‑shaped options object
-	function makeOptions (overrides: Record<string, unknown> = {}): BaseOptions {
-		return {
-			inputDirectory: testDir,
-			originDensity: 72,
-			targetFormats: [],
-			removeOrigin: false,
-			...overrides,
-		} as unknown as BaseOptions
-		// cast to any if you don't import BaseOptions
-	}
-
 	beforeEach(async () => {
 		testDir = join(process.cwd(), `test-temp-addPathsToOptions`)
 		await mkdir(testDir, { recursive: true })
@@ -68,3 +56,15 @@ describe(`addPathsToOptions`, () => {
 		expect(options.rasterPaths).toHaveLength(3)
 	})
 })
+
+// helper that returns a fully‑shaped options object
+function makeOptions (overrides: Record<string, unknown> = {}): BaseOptions {
+	return {
+		inputDirectory: testDir,
+		originDensity: 72,
+		targetFormats: [],
+		removeOrigin: false,
+		...overrides,
+	} as unknown as BaseOptions
+	// cast to any if you don't import BaseOptions
+}
