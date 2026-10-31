@@ -21,7 +21,7 @@ fix: ## 🩹 Fix code by oxlint
 .PHONY: fix
 
 test: ## 🧪 Run tests
-	vitest run
+	vitest
 .PHONY: test
 
 test-watch: ## 👁️ Run tests in watch mode
@@ -29,7 +29,7 @@ test-watch: ## 👁️ Run tests in watch mode
 .PHONY: test-watch
 
 test-coverage: ## 📊 Run tests with coverage report
-	vitest run --coverage
+	vitest --coverage
 .PHONY: test-coverage
 
 test-ui: ## 🧪 Run tests with UI
