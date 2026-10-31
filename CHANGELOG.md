@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [6.0.0] — 2026–10–31
+
 ### Changed
 
 - The default value for the `--target-formats` (`-f`) option of the `assets` command is now `avif`, because the Avif format has achieved _Baseline Widely Available_ status. If you are not yet able to stop using WebP as a fallback for Avif, specify both formats: `optimize assets -f avif -f webp`.
@@ -220,7 +222,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Basic functionality.
 
-[Unreleased]: https://github.com/firefoxic/optimize/compare/v5.2.2...HEAD
+[Unreleased]: https://github.com/firefoxic/optimize/compare/v6.0.0...HEAD
+[6.0.0]: https://github.com/firefoxic/optimize/compare/v5.2.2...v6.0.0
 [5.2.2]: https://github.com/firefoxic/optimize/compare/v5.2.1...v5.2.2
 [5.2.1]: https://github.com/firefoxic/optimize/compare/v5.2.0...v5.2.1
 [5.2.0]: https://github.com/firefoxic/optimize/compare/v5.1.0...v5.2.0
