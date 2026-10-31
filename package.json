@@ -50,7 +50,8 @@
 		"svgo": "^4.0.2"
 	},
 	"scripts": {
-		"help": "make help"
+		"help": "make help",
+		"prepare": "git config --local core.hooksPath .githooks || true"
 	},
 	"devDependencies": {
 		"@firefoxic/oxlint-config": "^0.4.0",
