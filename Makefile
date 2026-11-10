@@ -36,13 +36,16 @@ test-ui: ## 🧪 Run tests with UI
 	vitest --ui
 .PHONY: test-ui
 
-build: check lint test ## 🏗️ Build the project
+build: ## 🏗️ Build the project
 	rm -rf dist
 	tsrs -p tsconfig.build.json
 	rm dist/bin/cli.d.ts
 .PHONY: build
 
-release: build ## 🚀 Release a new version
+verify: lint test check build ## ✅ Run every check
+.PHONY: verify
+
+release: verify ## 🚀 Release a new version
 	pnpm dlx @firefoxic/release-it
 .PHONY: release
 
