@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [6.0.1] — 2026–11–21
+
 ### Fixed
 
 - The package now provides type declarations correctly.
@@ -226,7 +228,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Basic functionality.
 
-[Unreleased]: https://github.com/firefoxic/optimize/compare/v6.0.0...HEAD
+[Unreleased]: https://github.com/firefoxic/optimize/compare/v6.0.1...HEAD
+[6.0.1]: https://github.com/firefoxic/optimize/compare/v6.0.0...v6.0.1
 [6.0.0]: https://github.com/firefoxic/optimize/compare/v5.2.2...v6.0.0
 [5.2.2]: https://github.com/firefoxic/optimize/compare/v5.2.1...v5.2.2
 [5.2.1]: https://github.com/firefoxic/optimize/compare/v5.2.0...v5.2.1
