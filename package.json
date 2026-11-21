@@ -19,10 +19,11 @@
 		"optimize": "dist/bin/cli.js"
 	},
 	"type": "module",
+	"types": "./dist/lib/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/lib/index.js",
-			"types": "./dist/lib/index.d.ts"
+			"types": "./dist/lib/index.d.ts",
+			"import": "./dist/lib/index.js"
 		},
 		"./package.json": "./package.json"
 	},
