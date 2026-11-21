@@ -56,12 +56,12 @@
 		"prepare": "git config --local core.hooksPath .githooks || true"
 	},
 	"devDependencies": {
-		"@firefoxic/oxlint-config": "~0.5",
+		"@firefoxic/oxlint-config": "~0.7",
 		"@types/node": "^26",
 		"@vitest/coverage-v8": "^5",
 		"@vitest/ui": "5",
 		"oxlint": "^1",
-		"tsrs": "^0.20.1-ts7",
+		"tsrs": "latest",
 		"vitest": "^5"
 	},
 	"keywords": [

@@ -5,6 +5,7 @@ export default defineConfig({
 		include: [`src/**/*.test.ts`],
 		silent: true,
 		watch: false,
+		isolate: false,
 		coverage: {
 			provider: `v8`,
 			reporter: [`text`, `json`, `html`],
